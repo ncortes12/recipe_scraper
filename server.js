@@ -28,8 +28,9 @@ app.engine(
   app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/recipes");
- require("./routes/apiRoutes")(app);
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/recipes";
+mongoose.Promise = Promise; mongoose.connect(MONGODB_URI); 
+require("./routes/apiRoutes")(app);
 
 
 
