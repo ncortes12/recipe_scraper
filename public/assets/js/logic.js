@@ -24,12 +24,14 @@ $("#scrape").on("click", function (event){
         recipeDiv.append(title);
         recipeDiv.append(link);
         recipeDiv.append(favBtn);
+        
 
         
        
       
 
         }
+        // $(".display").append(recipeDiv);
     })
 })
 
@@ -43,4 +45,26 @@ $(document).on("click", ".saved" , function (event){
     }).then(function(data){
 
     })
+})
+
+$(".save").on("click" , function(event){
+    event.preventDefault();
+    
+    $.ajax("/article", {
+        type: "GET"
+    }).then(function(data){
+        console.log(data)
+    })
+})
+
+$(document).on("click", ".noted" , function (event){
+    event.preventDefault();
+
+    var id = $(this).attr("data-id");
+    console.log(id);
+    // console.log(id);
+    // $.ajax("/note/" + id, {
+    //     method: "GET",
+        
+ 
 })

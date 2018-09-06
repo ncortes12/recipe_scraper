@@ -48,8 +48,23 @@ module.exports = function (app) {
         console.log(req.body);
         var id = req.body.id ;
         console.log(id);
-        db.Recipe.update({_id:id},{$set:{saved:true}})
+        db.Recipe.updateOne({_id:"ObjectId('"+id+"')"},{$set:{saved:true}}, function(data){
+            console.log(data);
+        })
         });
+
+app.get("/article", function (req,res){
+    db.Recipe.find({saved:true}).then(function(data){
+        console.log(data);
+        var hbsObject = {
+            recipe:data
+        }
+    res.render("saved", hbsObject);
+        
+    })
+})
+
+app.post("/note")
    
 
 }
