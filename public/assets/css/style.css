@@ -1,0 +1,30 @@
+#chicken{
+    width: 90%;
+    height: 550px;
+    margin-left:80px;
+  
+
+}
+
+#title{
+    position: absolute;
+    z-index:2;
+    left: 575px;
+    top: 300px;
+    
+}
+
+.btn{
+    background-color: grey;
+    border-color: grey;
+    margin-right: 10px;
+}
+.jumbotron{
+    margin-bottom:0px;
+}
+
+.display{
+    background-image: url("../images/gravel.png");
+    height: 100%;
+    margin-top:0px;
+}
