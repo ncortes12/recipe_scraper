@@ -20,18 +20,18 @@ $("#scrape").on("click", function (event){
          favBtn.attr("id", id);
         
          favBtn.addClass("saved");
-        recipeDiv = $("div");
+        recipeDiv = $("<div>");
         recipeDiv.append(title);
         recipeDiv.append(link);
         recipeDiv.append(favBtn);
         
 
-        
+        $(".display").append(recipeDiv);
        
       
 
         }
-        // $(".display").append(recipeDiv);
+        
     })
 })
 
