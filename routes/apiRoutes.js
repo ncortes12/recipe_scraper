@@ -1,6 +1,8 @@
 var cheerio = require("cheerio");
 var request = require("request");
 var db = require("../models");
+var mongoose = require("mongoose");
+var mongojs = require("mongojs");
 
 module.exports = function (app) {
     app.get("/", function (req, res) {
@@ -48,7 +50,7 @@ module.exports = function (app) {
         console.log(req.body);
         var id = req.body.id ;
         console.log(id);
-        db.Recipe.updateOne({_id:"ObjectId('"+id+"')"},{$set:{saved:true}}, function(data){
+        db.Recipe.updateOne({_id: (mongojs.ObjectId(id))},{$set:{saved:true}}, function(data){
             console.log(data);
         })
         });
@@ -63,8 +65,6 @@ app.get("/article", function (req,res){
         
     })
 })
-
-app.post("/note")
    
 
 }

@@ -68,3 +68,8 @@ $(document).on("click", ".noted" , function (event){
         
  
 })
+
+$("#clear").on("click" , function(event){
+    event.preventDefault();
+    $(".display").empty();
+})
